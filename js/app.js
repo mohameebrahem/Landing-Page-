@@ -32,18 +32,29 @@ colorsLi.forEach((li) => {
 });
 const landingPage = document.querySelector('.landing-page');
 let imagesArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
-setInterval(() => {
-  let randomNumber = Math.floor(Math.random() * imagesArray.length);
-
-  landingPage.style.backgroundImage = `url("images/${imagesArray[randomNumber]}")`;
-}, 10000);
-
+let intervalId;
 const backgroundBtns = document.querySelectorAll('.random-backgrounds span');
+function randomnbackgrounds() {
+  if (!intervalId) {
+    intervalId = setInterval(() => {
+      let randomNumber = Math.floor(Math.random() * imagesArray.length);
+
+      landingPage.style.backgroundImage = `url("images/${imagesArray[randomNumber]}")`;
+    }, 1000);
+  }
+}
 backgroundBtns.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     e.target.parentElement.querySelectorAll('span').forEach((span) => {
       span.classList.remove('active');
     });
     e.target.classList.add('active');
+
+    if (e.target.classList.contains('yes')) {
+      randomnbackgrounds();
+    } else {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
   });
 });
