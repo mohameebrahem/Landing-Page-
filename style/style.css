@@ -7,6 +7,12 @@
 body {
   font-family: 'open sans', 'sans-serif';
 }
+.container {
+  width: 1170px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
 .settings-box {
   position: fixed;
   left: -200px;
@@ -176,4 +182,32 @@ body {
   line-height: 1.6;
   font-size: 20px;
   margin: 0;
+}
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+}
+.about-us .info-box {
+  flex: 1;
+  padding: 30px;
+}
+.about-us .info-box h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.about-us p {
+  line-height: 1.8;
+  color: #767676;
+  margin: 0;
+}
+
+.about-us .image-box {
+  text-align: center;
+  flex: 1;
+}
+.about-us .image-box img {
+  width: 250px;
 }
