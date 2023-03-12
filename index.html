@@ -39,6 +39,15 @@
           </div>
         </div>
       </div>
+      <div class="option-box">
+        <h4>Bullets</h4>
+
+        <div class="bullets-option">
+          <span class="yes active" data-display="show">Show</span>
+          <span class="no" data-display="hide">Hide</span>
+        </div>
+      </div>
+      <button class="reset-option">Reset Options</button>
     </div>
     <div class="nav-bullets">
       <div class="bullet" data-section=".about-us">
@@ -65,14 +74,21 @@
       <div class="container">
         <div class="header-area">
           <div class="logo">Special Design</div>
-          <ul class="links">
-            <li><a href="#" data-section=".about-us">About</a></li>
-            <li><a href="#" data-section=".skills">Skills</a></li>
-            <li><a href="#" data-section=".gallery">Gallery</a></li>
-            <li><a href="#" data-section=".timeline">Timeline</a></li>
-            <li><a href="#" data-section=".features">Features</a></li>
-            <li><a href="#" data-section=".testimonials">Testomonials</a></li>
-          </ul>
+          <div class="links-container">
+            <ul class="links">
+              <li><a href="#" data-section=".about-us">About</a></li>
+              <li><a href="#" data-section=".skills">Skills</a></li>
+              <li><a href="#" data-section=".gallery">Gallery</a></li>
+              <li><a href="#" data-section=".timeline">Timeline</a></li>
+              <li><a href="#" data-section=".features">Features</a></li>
+              <li><a href="#" data-section=".testimonials">Testomonials</a></li>
+            </ul>
+            <button class="toggle-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </div>
       <div class="introduction-text">
@@ -278,6 +294,27 @@
         </div>
       </div>
       <div class="clearfix"></div>
+    </div>
+    <div class="contact">
+      <div class="overlay"></div>
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="">
+          <div class="left">
+            <input type="text" placeholder="Your Name" name="username" />
+            <input type="number" placeholder="Your Phone" name="phone" />
+            <input type="email" placeholder="Your Email" name="email" />
+            <input type="text" placeholder="Subject" name="subject" />
+          </div>
+          <div class="right">
+            <textarea
+              name="message"
+              placeholder="Enter Your Message"
+            ></textarea>
+            <input type="submit" value="Send" />
+          </div>
+        </form>
+      </div>
     </div>
   </body>
 </html>
