@@ -3,6 +3,21 @@ const colorsLi = document.querySelectorAll('.colors-list li');
 const allSkills = document.querySelectorAll('.skill-box span');
 let intervalId;
 let backgroundOption = true;
+let localBullets = localStorage.getItem('bullets-option');
+const toggleSpin = document.querySelector('.toggle-settings i');
+const landingPage = document.querySelector('.landing-page');
+let imagesArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
+let localBackground = localStorage.getItem('background-option');
+let ourSkills = document.querySelector('.skills');
+const allBullets = document.querySelectorAll('.nav-bullets .bullet');
+let ourGallery = document.querySelectorAll('.images-box img');
+
+const allLinks = document.querySelectorAll('.links a');
+
+const backgroundBtns = document.querySelectorAll('.random-backgrounds span');
+
+let toggleBtn = document.querySelector('.toggle-menu');
+let tLinks = document.querySelector('.links');
 if (localColors !== null) {
   document.documentElement.style.setProperty('--main-color', localColors);
 
@@ -14,7 +29,6 @@ if (localColors !== null) {
   });
 }
 
-const toggleSpin = document.querySelector('.toggle-settings i');
 toggleSpin.addEventListener('click', function () {
   this.classList.toggle('fa-spin');
   document.querySelector('.settings-box').classList.toggle('open');
@@ -29,10 +43,6 @@ colorsLi.forEach((li) => {
     handleActive(e);
   });
 });
-const landingPage = document.querySelector('.landing-page');
-let imagesArray = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg'];
-
-const backgroundBtns = document.querySelectorAll('.random-backgrounds span');
 function randomnbackgrounds() {
   if (backgroundOption == true) {
     intervalId = setInterval(() => {
@@ -42,7 +52,6 @@ function randomnbackgrounds() {
     }, 1000);
   }
 }
-let localBackground = localStorage.getItem('background-option');
 if (localBackground) {
   if (localBackground == 'true') {
     backgroundOption = true;
@@ -76,7 +85,6 @@ backgroundBtns.forEach((btn) => {
   });
 });
 
-let ourSkills = document.querySelector('.skills');
 window.onscroll = function () {
   let skillsOffsetTop = ourSkills.offsetTop;
   let skillsOffsetOuterHeight = ourSkills.offsetHeight;
@@ -96,7 +104,6 @@ window.onscroll = function () {
     });
   }
 };
-let ourGallery = document.querySelectorAll('.images-box img');
 ourGallery.forEach((img) => {
   img.addEventListener('click', (e) => {
     let overlay = document.createElement('div');
@@ -128,8 +135,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-const allBullets = document.querySelectorAll('.nav-bullets .bullet');
-const allLinks = document.querySelectorAll('.links a');
 function scrollToTarget(elements) {
   elements.forEach((element) => {
     element.addEventListener('click', (e) => {
@@ -162,7 +167,6 @@ bulletsSpanSetting.forEach((element) => {
     handleActive(e);
   });
 });
-let localBullets = localStorage.getItem('bullets-option');
 if (localBullets != null) {
   bulletsSpanSetting.forEach((element) => {
     element.classList.remove('active');
@@ -184,8 +188,6 @@ document.querySelector('.reset-option').onclick = function () {
 };
 randomnbackgrounds();
 
-let toggleBtn = document.querySelector('.toggle-menu');
-let tLinks = document.querySelector('.links');
 toggleBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   toggleBtn.classList.toggle('menu-active');
